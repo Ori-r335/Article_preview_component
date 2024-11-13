@@ -1,7 +1,7 @@
 .modal {
   position: absolute;
-  left: 890px;
-  bottom: 368px;
+  left: 930px;
+  bottom: 320px;
   background: hsl(217, 19%, 35%);
   z-index: 999;
   display: flex;
@@ -14,7 +14,6 @@
 }
 
 .modal_opened {
-  /* display: flex; */
   visibility: visible;
   opacity: 1;
   pointer-events: all;
@@ -72,4 +71,36 @@
 .modal__icon {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (max-width: 376px) {
+  .modal {
+    /* display: flex;
+    position: relative; */
+    position: absolute;
+    left: 52px;
+    top: 347px;
+    bottom: 87px;
+    border-radius: 0 0 10px 10px;
+    right: 53px;
+    z-index: 1;
+  }
+
+  .modal:after {
+    content: none;
+  }
+
+  .modal__container {
+    column-gap: 17px;
+    justify-content: flex-start;
+  }
+
+  .modal__icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .modal_text {
+    font-size: 10px;
+  }
 }
