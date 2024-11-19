@@ -5,11 +5,7 @@ const mediaQuery = window.matchMedia("(max-width: 376px)");
 
 shareButton.addEventListener("click", () => {
   shareModal.classList.toggle("modal_opened");
-  if (mediaQuery.matches && shareModal.classList.contains("modal_opened")) {
-    shareButton.style.background = "hsl(217, 19%, 35%)";
-  } else {
-    shareButton.style.background = "hsl(210, 46%, 95%)";
-  }
+  shareStyle();
 });
 
 // Close the modal when clicking anywhere outside the modal content
@@ -24,7 +20,16 @@ function handleOverlay(evt) {
     // If the click was outside the modal, close it
     if (!isClickInsideModal) {
       closePopup(shareModal);
+      shareStyle();
     }
+  }
+}
+
+function shareStyle() {
+  if (mediaQuery.matches && shareModal.classList.contains("modal_opened")) {
+    shareButton.style.background = "hsl(217, 19%, 35%)";
+  } else {
+    shareButton.style.background = "hsl(210, 46%, 95%)";
   }
 }
 
